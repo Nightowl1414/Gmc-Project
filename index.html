@@ -1,71 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Delicious Bites Menu</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delicious Bites Menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
 
-  <body>
-    <nav>
-      <ul>
-        <li><a href="#About-Us">About Us</a></li>
-        <li><a href="#Contact-Us">Contact Us</a></li>
-        <li><a href="#Our-Socials">Our Socials</a></li>
-      </ul>
-    </nav>
+<body>
+  <nav class="navbar">
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact Us</a>
+    <a href="#socials">Our Socials</a>
+    <button id="darkModeToggle">🌙</button>
+  </nav>
 
-    <h1>Delicious Bites Menu</h1>
+  <div class="container">
+    <h1 class="fade-in">Delicious Bites Menu</h1>
 
-    <h2>Appetizers</h2>
-    <ul>
-      <li>
-        <strong>Caprese Salad</strong>
-        <p>Fresh tomatoes, mozzarella, and basil drizzled with balsamic glaze.</p>
-      </li>
-      <li>
-        <strong>Hummus</strong>
-        <p>Creamy dip made from blended chickpeas and tahini</p>
-      </li>
-      <li>
-        <strong>Stuffed Mushrooms</strong>
-        <p>Filled with cheese and herbs for a savory treat</p>
-      </li>
-    </ul>
+    <section id="appetizers" class="fade-in">
+      <h2>Appetizers</h2>
+      <div class="menu-card"><strong>Caprese Salad</strong><p>Fresh tomatoes, mozzarella, basil, balsamic glaze.</p></div>
+      <div class="menu-card"><strong>Hummus</strong><p>Creamy dip made from blended chickpeas and tahini.</p></div>
+      <div class="menu-card"><strong>Stuffed Mushrooms</strong><p>Filled with cheese and herbs for a savory treat.</p></div>
+    </section>
 
-    <h2>Main Courses</h2>
-    <ul>
-      <li>
-        <strong>Grilled Salmon</strong>
-        <p>Salmon fillet seasoned and grilled to perfection, served with lemon butter sauce.</p>
-      </li>
-      <li>
-        <strong>Grilled Chicken With Vegetables</strong>
-        <p>A classic Western main course with seasoned, grilled chicken breast served with roasted vegetables.</p>
-      </li>
-      <li>
-        <strong>Spaghetti Bolognese</strong>
-        <p>Italian pasta dish with a rich meat and tomato sauce.</p>
-      </li>
-    </ul>
+    <section id="main-courses" class="fade-in">
+      <h2>Main Courses</h2>
+      <div class="menu-card"><strong>Grilled Salmon</strong><p>Seasoned, grilled salmon with lemon butter sauce.</p></div>
+      <div class="menu-card"><strong>Grilled Chicken With Vegetables</strong><p>Chicken breast with roasted vegetables.</p></div>
+      <div class="menu-card"><strong>Spaghetti Bolognese</strong><p>Italian pasta with rich meat sauce.</p></div>
+    </section>
 
-    <h2>Desserts</h2>
-    <ul>
-      <li>
-        <strong>Chocolate Fondue</strong>
-        <p>Assorted fruits and marshmallows served with rich chocolate fondue.</p>
-      </li>
-      <li>
-        <strong>Chocolate Cake</strong>
-        <p>A rich, moist cake made with cocoa or melted chocolate.</p>
-      </li>
-      <li>
-        <strong>Tiramisu</strong>
-        <p>Italian layered dessert made with coffee-soaked ladyfingers, mascarpone cheese, and cocoa powder.</p>
-      </li>
-    </ul>
+    <section id="desserts" class="fade-in">
+      <h2>Desserts</h2>
+      <div class="menu-card"><strong>Chocolate Fondue</strong><p>Fruits, marshmallows, rich chocolate.</p></div>
+      <div class="menu-card"><strong>Chocolate Cake</strong><p>Moist cocoa cake.</p></div>
+      <div class="menu-card"><strong>Tiramisu</strong><p>Coffee-soaked dessert, mascarpone, cocoa.</p></div>
+    </section>
 
-    <p><a href="contact.html">Contact us for reservations</a></p>
-  </body>
+    <section id="gallery" class="fade-in">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="https://source.unsplash.com/200x200/?salad" alt="Dish 1">
+        <img src="https://source.unsplash.com/200x200/?steak" alt="Dish 2">
+        <img src="https://source.unsplash.com/200x200/?dessert" alt="Dish 3">
+      </div>
+    </section>
+
+    <section id="newsletter" class="fade-in">
+      <h2>Join Our Newsletter</h2>
+      <form id="newsletterForm">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <section id="socials" class="fade-in">
+      <h2>Follow Us</h2>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+        <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+        <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+      </div>
+    </section>
+
+    <div class="footer">
+      <p><a href="contact.html">Contact us for reservations</a></p>
+    </div>
+  </div>
+
+  <button id="topBtn">⬆ Top</button>
+
+  <script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.onclick = () => document.body.classList.toggle('dark-mode');
+
+    const topBtn = document.getElementById('topBtn');
+    window.onscroll = () => {
+      topBtn.style.display = window.scrollY > 100 ? 'block' : 'none';
+    };
+    topBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for subscribing!');
+      this.reset();
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
 </html>
